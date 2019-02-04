@@ -78,4 +78,22 @@ public class CheeseController {
         model.addAttribute("title","Cheeses by "+categoryDao.findOne(id).getName());
         return "cheese/index";
     }
+
+//    @RequestMapping(value = "edit/{cheeseId}" , method = RequestMethod.GET)
+//    public String displayEditForm(Model model, @PathVariable int cheeseId){
+//        model.addAttribute("cheese",cheeseDao.findOne(cheeseId));
+//        return "cheese/edit";
+//    }
+//
+//    @RequestMapping(value = "edit/{cheeseId}" , method = RequestMethod.POST)
+//    public String processEditForm(@Valid Cheese newcheese,  Errors errors,Model model, int cheeseId , String name, String description){
+//        if(errors.hasErrors()){
+//            model.addAttribute(newcheese);
+//            model.addAttribute("cheese",cheeseDao.findOne(cheeseId));
+//            return "cheese/edit";
+//        }
+//
+//        return index(model);
+//    }
+//}
 }

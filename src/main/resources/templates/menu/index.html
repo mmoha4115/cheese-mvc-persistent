@@ -14,7 +14,7 @@
 
         <ul th:each="menu : ${menus}">
             <li>
-                <a th:href="/menu/view/${menu.id}" th:text="${menu.name}">Menu</a>
+                <a th:href="'/menu/view/'+${menu.id}" th:text="${menu.name}">Menu</a>
             </li>
         </ul>
 
