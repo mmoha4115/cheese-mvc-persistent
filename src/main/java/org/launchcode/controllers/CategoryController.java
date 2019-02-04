@@ -38,13 +38,13 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "add" , method = RequestMethod.POST)
-    public String processDisplayAddForm(Model model, @ModelAttribute @Valid Category newCategory, Errors errors){
+    public String processDisplayAddForm(Model model, @ModelAttribute @Valid Category category, Errors errors){
         if(errors.hasErrors()){
             model.addAttribute("title","Add Category");
-            model.addAttribute("category",newCategory);
+            model.addAttribute(category);
             return "category/add";
         }
-
+        categoryDao.save(category);
         return "redirect:";
     }
 
